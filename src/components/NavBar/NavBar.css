@@ -1,0 +1,46 @@
+
+*{
+    display: center;
+}
+
+nav{
+    width: 100%;
+    max-width: 1000px;
+    overflow: hidden;
+    position: fixed;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0.4);
+}
+
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #B1D0E0;
+}
+
+li {
+    list-style: none;
+    padding: 20px;
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #1A374D;
+}
+
+.active {
+    background-color: #406882;
+}
+
+.widget{
+    display: flex;
+    justify-content: end;
+}

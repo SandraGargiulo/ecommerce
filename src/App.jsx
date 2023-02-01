@@ -1,31 +1,45 @@
 
 //import './App.css'
-import { Children, useState } from 'react'
-import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
-import NavBar from './components/Navbar/NavBar'
-//import Title from './components/Title/Title'
-import ItemListContainer from './components/container/ItemListContainer/ItemListContainer'
+import * as React from 'react'
+import { BrowserRouter, Routers, Route, Navigate } from 'react-router-dom'
+import { ItemListContainer } from './components/container/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/container/ItemDetailContainer/ItemDetailContainer'
 import CartContainer from './components/container/CartContainer/CartContainer'
+import NavBar from './components/Navbar/NavBar'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-
   return (
     <BrowserRouter>
-      <NavBar />
-        <Routes>
-        <Route path='/' element={<ItemListContainer saludo={'En contrucción..'}  />} />
-        <Route path='/categoria/:categoryId' element={<ItemListContainer saludo={'En contrucción..'}  />} />
-        <Route path='/detail/:detailId' element={<ItemDetailContainer />} />
-          <Route path='/cart' element={<CartContainer/>} />
+      <NavBar/>
+      <Routers>
+        <Route path='/' element={<ItemListContainer greeting={'En contrucción..'} />} />
+        <Route path='/type/:typeId' element={<ItemListContainer greeting={'En contrucción..'} />} />
+        <Route path='/detail/:detailId' element={<ItemDetailContainer/>}/>
+        <Route path='/cart' element={<CartContainer />} />
 
-          <Router path='*' element={<Navigate to='/'/>} />
-        </Routes>
-
+        <Route path='*' element={<Navigate to='/'/>}/>
+      </Routers>
     </BrowserRouter>
   )
 }
 
-export default App
+
+/*
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<ItemListContainer greeting={'En contrucción..'} />} />
+        <Route path="/type/:typeId" element={<ItemListContainer greeting={'En contrucción..'} />} />
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<Navigate />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+*/

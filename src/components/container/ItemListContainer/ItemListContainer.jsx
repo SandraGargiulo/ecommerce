@@ -5,7 +5,7 @@ import { gFetch } from '../../../utils/gFetch'
 
 import SyncLoader from "react-spinners/SyncLoader"
 
-export const ItemListConteiner = ({ greeting }) => {
+export const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState ([])
   const [loading, setLoading] = useState(true)
   const { typeId } = useParams()
@@ -55,3 +55,4 @@ export const ItemListConteiner = ({ greeting }) => {
   )
 }
 
+export default ItemListContainer

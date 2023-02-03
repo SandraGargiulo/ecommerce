@@ -13,7 +13,6 @@ export const ItemListContainer = ({ greeting }) => {
   const { typeId } = useParams()
 
   useEffect(()=>{
-    setLoading(true);
     if(typeId){
       gFetch()
         .then(respuestaPromesa => {

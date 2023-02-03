@@ -73,3 +73,4 @@ export const gFetch = (id) => {
         }, 1000)
     })
 }
+

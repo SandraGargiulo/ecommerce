@@ -8,9 +8,12 @@ import SyncLoader from "react-spinners/SyncLoader"
 export const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState ([])
   const [loading, setLoading] = useState(true)
+  const [types, setTypes] = useState([]);
+
   const { typeId } = useParams()
 
   useEffect(()=>{
+    setLoading(true);
     if(typeId){
       gFetch()
         .then(respuestaPromesa => {
@@ -26,24 +29,24 @@ export const ItemListContainer = ({ greeting }) => {
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
     }
-  },[categoryId])
+  },[typeId])
 
   return (
     <>
       {greeting ? (
         <h1 className="loading">
-          <SyncLoader color="#E569FB" greeting={greeting} size={50} />
+          <SyncLoader color="#6998AB" loading={loading} size={10} />
         </h1>
       ) : (
         <div className="itemListContainer">
           <div className="type">
-              {products.map((product) => (
+              {products.map((s) => (
               <NavLink
-                key={product.id}
+                key={products.id}
                 to={`/products/${products.type}`}
                 className="nav-link"
               >
-                  {product.type}
+                  {products.type}
               </NavLink>
             ))}
           </div>

@@ -1,6 +1,8 @@
+import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { gFetch } from '../../../utils/gFetch'
+import ItemList from '../../ItemList/ItemList'
 //import './ItemListContainer.css'
 
 import SyncLoader from "react-spinners/SyncLoader"
@@ -30,15 +32,19 @@ export const ItemListContainer = ({ greeting }) => {
     }
   },[typeId])
 
+  console.log("Productos: ", products)
+
   return (
     <>
-      {greeting ? (
+      {loading ? (
         <h1 className="loading">
           <SyncLoader color="#6998AB" loading={loading} size={10} />
         </h1>
       ) : (
+        
         <div className="itemListContainer">
           <div className="type">
+              
               {products.map((s) => (
               <NavLink
                 key={products.id}

@@ -14,15 +14,15 @@ export const ItemListContainer = ({ greeting }) => {
 
   const { typeId } = useParams()
 
-  useEffect(()=>{
-    if(typeId){
+  useEffect(() => {
+    if (typeId) {
       gFetch()
         .then(respuestaPromesa => {
           setProducts(respuestaPromesa.filter(items => items.type === typeId))
         })
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
-    }else{
+    } else {
       gFetch()
         .then(respuestaPromesa => {
           setProducts(respuestaPromesa)
@@ -30,7 +30,7 @@ export const ItemListContainer = ({ greeting }) => {
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
     }
-  },[typeId])
+  }, [typeId])
 
   console.log("Productos: ", products)
 
@@ -41,17 +41,17 @@ export const ItemListContainer = ({ greeting }) => {
           <SyncLoader color="#6998AB" loading={loading} size={10} />
         </h1>
       ) : (
-        
+
         <div className="itemListContainer">
           <div className="type">
-              
-              {products.map((s) => (
+
+            {products.map((product) => (
               <NavLink
-                key={products.id}
-                to={`/products/${products.type}`}
+                key={product.id}
+                to={`/products/${product.type}`}
                 className="nav-link"
               >
-                  {products.type}
+                {product.type}
               </NavLink>
             ))}
           </div>

@@ -8,9 +8,6 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
     const { id } = useParams()
 
-
-
-
     useEffect(() => {
         gFetch(id)
             .then(resp => setProducts(resp))

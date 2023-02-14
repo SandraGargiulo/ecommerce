@@ -15,7 +15,7 @@ export default function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer greeting={'En contrucción..'} />} />
-        <Route path='/products/:typeId' element={<ItemListContainer greeting={'En contrucción..'} />} />
+        <Route path='/category/:categoryId' element={<ItemListContainer greeting={'En contrucción..'} />} />
         <Route path='/detail/:id' element={<ItemDetailContainer />} />
         <Route path='/cart' element={<CartContainer />} />
 

@@ -1,15 +1,20 @@
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
 const ItemDetail = ({products})=>{
     return(
-        <div classname="container">
-            <div classname="row">
-                <div classname="col-6">
-                    <img src={products.thumbnail} classname='w-25'/>
-                    <h4>Tipo: {products.type}</h4>
-                    <h4>Fabricante: {products.brand}</h4>
-                    <h4>Nombre: {products.name}</h4>
-                    <h4>{products.description}</h4>
-                    <h4>Precio: {products.price}</h4>
-                </div>
+        <div>
+            <div style={{ width: '40rem' }}>
+                <Card className="text-center">
+                    <Card.Header>{products.category}</Card.Header>
+                    <Card.Img variant="top" style={{ width: '18rem' }} src={products.thumbnail} />
+                    <Card.Body>
+                        <Card.Title>{products.brand} - {products.name}</Card.Title>
+                        <Card.Text>{products.description}</Card.Text>
+                        <Button variant="dark">Comprar</Button>
+                    </Card.Body>     
+                    <Card.Footer className="text-muted">${products.price}</Card.Footer>            
+                </Card>
             </div>
         </div>
     )

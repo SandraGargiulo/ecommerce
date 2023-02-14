@@ -10,15 +10,15 @@ import SyncLoader from "react-spinners/SyncLoader"
 export const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState ([])
   const [loading, setLoading] = useState(true)
-  const [types, setTypes] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-  const { typeId } = useParams()
+  const { categoryId } = useParams()
 
   useEffect(() => {
-    if (typeId) {
+    if (categoryId) {
       gFetch()
         .then(respuestaPromesa => {
-          setProducts(respuestaPromesa.filter(items => items.type === typeId))
+          setProducts(respuestaPromesa.filter(items => items.category === categoryId))
         })
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
@@ -30,7 +30,7 @@ export const ItemListContainer = ({ greeting }) => {
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
     }
-  }, [typeId])
+  }, [categoryId])
 
   console.log("Productos: ", products)
 
@@ -43,15 +43,15 @@ export const ItemListContainer = ({ greeting }) => {
       ) : (
 
         <div className="itemListContainer">
-          <div className="type">
+            <div className="category">
 
             {products.map((product) => (
               <NavLink
                 key={product.id}
-                to={`/products/${product.type}`}
+                to={`/product/${product.category}`}
                 className="nav-link"
               >
-                {product.type}
+                {product.category}
               </NavLink>
             ))}
           </div>

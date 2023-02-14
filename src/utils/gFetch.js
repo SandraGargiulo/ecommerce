@@ -2,7 +2,7 @@
 let products = [
     {
         id: '1',
-        type: 'motor',
+        category: 'motor',
         brand: 'Motores Czerweny',
         name: 'Motor Monofasico 1 Hp 56 Mc4Lrc',
         description:
@@ -16,7 +16,7 @@ let products = [
     },
     {
         id: '2',
-        type: 'motor',
+        category: 'motor',
         brand: 'Motores Czerweny',
         name: 'Motor Monofasico Hormigonera 0.6 Hp 56Mc4Rh',
         description: '✅ Tensión: 220V ✅ Protección: IP21 ✅ Corriente 6, 5 A ✅ Frecuencia: 50 Hz' +
@@ -29,7 +29,7 @@ let products = [
     },
     {
         id: '3',
-        type: 'motor',
+        category: 'motor',
         brand: 'Motores Czerweny',
         name: 'Bomba Sumergible Agua Limpia Plas 500W',
         price: 18965,
@@ -41,7 +41,7 @@ let products = [
     },
     {
         id: '4',
-        type: 'motor',
+        category: 'motor',
         brand: 'Motores Czerweny',
         name: 'Bomba Sumergible Agua Limpia Plas 650W',
         description: '',
@@ -53,7 +53,7 @@ let products = [
     },
     {
         id: '5',
-        type: 'grupo',
+        category: 'grupo',
         brand: 'Motores Czerweny',
         name: '',
         description: '',
